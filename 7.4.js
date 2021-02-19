@@ -45,16 +45,16 @@ let pc = new computer('desktop', 250, 1, true);
 let laptop = new computer('laptop', 150, 1, false);
 
 let electricArr = [roomLamp, kitchenLamp, pc, laptop];
+let total = 0;
 
-for (i = 0; i < electricArr.length; i++) {
-	let a = Object.entries(electricArr[i]);
-	for (const [key, value] of a) {
-		if (key == "amount") {
-			console.log(value);
-		}
-		// console.log(`key: ${key}, value: ${value}`)
+electricArr.forEach(function (element) {
+	let total = element.amount;
+	console.log(total);
+	for (var i = 0, len = total.length; i < len; i++) {
+		total += myData[i];
 	}
-}
+});
+
 
 roomLamp.plugInOut();
 kitchenLamp.plugInOut();
